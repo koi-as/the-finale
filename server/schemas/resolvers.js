@@ -7,4 +7,4 @@ const resolvers = {
   // and another one named Mutation: {}
 };
 
-module.exports = resolvers;
+module.exports = resolvers; // export resolvers
