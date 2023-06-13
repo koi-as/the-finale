@@ -5,7 +5,7 @@ const typeDefs = gql`
         _id: ID
         username: String
         password: String
-        posts: [posts]
+        posts: [Post]
         comments: [comments]
     }
 
@@ -24,6 +24,7 @@ const typeDefs = gql`
         CreatedBy: String
         CreatedOn: String
         post: ID
+        dislikes: Number
     }
 `
 
