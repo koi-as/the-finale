@@ -1,8 +1,8 @@
 {
   "name": "the-finale",
   "version": "1.0.0",
-  "description": "<!-- we obviously need a better name for this :P -->",
-  "main": "index.js",
+  "description": "The final project for the bootcamp",
+  "main": "server/server.js",
   "scripts": {
     "install": "cd server && npm i && cd ../client && npm i",
     "dev": "concurrently \"npm run client\" \"npm run server\" ",

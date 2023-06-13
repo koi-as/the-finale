@@ -8,15 +8,10 @@ import {
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  createHttpLink
+  ApolloProvider
 } from '@apollo/client'; // import Apollo functions
 
 // import components
-
-const httpLink = createHttpLink({
-  uri: '/graphql'
-});
 
 const client = new ApolloClient({
   cache: new InMemoryCache()
