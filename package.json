@@ -4,14 +4,18 @@
   "description": "<!-- we obviously need a better name for this :P -->",
   "main": "index.js",
   "scripts": {
-    "start": "node server --ignore client",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i"
+    "install": "cd server && npm i && cd ../client && npm i",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "build": "cd client && npm run build",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server && nodemon server.js",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
   }
 }
