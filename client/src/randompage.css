@@ -1,0 +1,16 @@
+body {
+  background: black;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#home {
+  float: inline-start;
+}
