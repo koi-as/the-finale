@@ -2,7 +2,7 @@
   "name": "the-finale",
   "version": "1.0.0",
   "description": "The final project for the bootcamp",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
