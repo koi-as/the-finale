@@ -20,11 +20,7 @@ const resolvers = {
       return Post.findOne({ _id: postId });
     },
   },
-
-  // and another one named Mutation: {}
-
   // addUser and login logic if needed later
-
   Mutation: {
     addPost: async (parent, { postText }, context) => {
       if (context.user) {
