@@ -6,7 +6,7 @@ const { ApolloServer } = require('apollo-server-express'); // import apollo-serv
 const { typeDefs, resolvers } = require('./schemas/index.js');
 // import db connection
 
-const PORT = process.env.PORT || 9001; // you can change the port if you'd like, I just chose something that most likely wasn't being used
+const PORT = 9001 || process.env.PORT; // you can change the port if you'd like, I just chose something that most likely wasn't being used
 const app = express(); 
 const server = new ApolloServer({ // instantiate the ApolloServer with our schema setup
   typeDefs,
