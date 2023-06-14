@@ -4,13 +4,14 @@ const userSeed = require('./userSeed.json');
 const postSeed = require('./postSeed.json');
 
 db.once('open', async () => {
+    console.log('We up in this database');
   try {
+    // Delete existing data
+    await User.deleteMany({});
+    await Post.deleteMany({});
+
     const newUsers = await User.create(userSeed);
     const newPosts = await Post.create(postSeed);
-
-    if (!Array.isArray(newUsers)) {
-      throw new Error('Failed to create users');
-    }
 
     for (let i = 0; i < newPosts.length; i++) {
       const post = newPosts[i];

@@ -9,6 +9,7 @@
     "build": "cd client && npm run build",
     "start": "npm run build && cd server && node server.js",
     "server": "cd server && nodemon server.js",
+    "seed": "cd server && npm run seed",
     "client": "cd client && npm start"
   },
   "keywords": [],
