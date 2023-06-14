@@ -30,8 +30,9 @@ const userSchema = new Schema({
 username: String,
 password: String,
 email: String,
-createdAt: String
-})
+createdAt: String,
+posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
+});
 
 const User = model('User', userSchema)
 

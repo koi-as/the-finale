@@ -27,7 +27,7 @@ const { Schema, model, Types } = require('mongoose')
 //     id: false
 // })
 
-const postShema = new Schema({
+const postSchema = new Schema({
 //     postText: {
 //         type: String,
 //         required: true,
@@ -75,8 +75,12 @@ user: {
     type: Schema.Types.ObjectId,
     ref: 'users'
 }
-})
+});
 
-const Post = model('Post', postShema)
+postSchema.statics.deleteManyPosts = async function () {
+    await this.deleteManyPosts();
+};
+
+const Post = model('Post', postSchema)
 
 module.exports = Post
