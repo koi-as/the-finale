@@ -4,14 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // im
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"; // import Apollo functions
 
 // Component imports
+import Header from './components/Header';
 import Feed from './components/Feed/Feed'
 import LeftSidebar from './components/LeftSidebar/LeftSidebar'
 import RightSidebar from './components/RightSidebar/RightSidebar'
 import Footer from './components/Footer/index'
-
-const test = "Hello Bitter! :D"
-
-// import components
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -20,17 +17,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {test}
       <Router>
-        <div className='columns-3'>
-          {/* add a navbar here */}
+      <Header />
+        <div className=''>
           <LeftSidebar />
           <Feed />
           <RightSidebar />
-          <Routes>
-          </Routes>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   )
