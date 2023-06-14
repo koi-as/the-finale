@@ -11,6 +11,7 @@ import {
   ApolloProvider
 } from '@apollo/client'; // import Apollo functions
 
+const test = "Hello Bitter! :D"
 // import components
 
 const client = new ApolloClient({
@@ -20,6 +21,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      {test}
       <Router>
         <div>
           {/* add a navbar here */}
