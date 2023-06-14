@@ -6,10 +6,9 @@
       "createdOn": "2023-06-22T19:00:00Z",
       "comments": [
         {
-          "id": "1",
-          "content": "Why so bitter bruh?",
-          "createdBy": "2",
-          "createdOn": "2023-06-16T09:30:00Z",
+          "commentBody": "Why so bitter bruh?",
+          "username": "2",
+          "createdAt": "2023-06-16T09:30:00Z",
           "dislikes": 2
         }
       ]
@@ -21,10 +20,9 @@
       "createdOn": "2023-06-28T19:32:17Z",
       "comments": [
         {
-          "id": "2",
-          "content": "Stop moving to Atlanta. We're full.",
-          "createdBy": "1",
-          "createdOn": "2023-06-13T21:30:00Z",
+          "commentBody": "Stop moving to Atlanta. We're full.",
+          "username": "1",
+          "createdAt": "2023-06-13T21:30:00Z",
           "dislikes": 4
         }
       ]
@@ -36,10 +34,9 @@
       "createdOn": "2023-06-09T04:04:10Z",
       "comments": [
         {
-          "id": "3",
-          "content": "I want to take handlebars.js and burn it!",
-          "createdBy": "4",
-          "createdOn": "2023-06-18T09:38:00Z",
+          "commentBody": "I want to take handlebars.js and burn it!",
+          "username": "4",
+          "createdAt": "2023-06-18T09:38:00Z",
           "dislikes": 0
         }
       ]
@@ -51,10 +48,9 @@
       "createdOn": "2023-06-18T19:18:00Z",
       "comments": [
         {
-          "id": "4",
-          "content": "You mad?",
-          "createdBy": "5",
-          "createdOn": "2023-06-18T05:59:00Z",
+          "commentBody": "You mad?",
+          "username": "5",
+          "createdAt": "2023-06-18T05:59:00Z",
           "dislikes": 4
         }
       ]
