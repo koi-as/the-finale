@@ -30,4 +30,4 @@ const Footer = () => {
   );
 };
 
-export default FieldsOnCorrectTypeRule;
+export default Footer;
