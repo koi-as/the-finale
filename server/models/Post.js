@@ -48,7 +48,7 @@ const commentSchema = new Schema({
   });
   
   postSchema.statics.deleteManyPosts = async function () {
-    await this.deleteManyPosts();
+    await this.deleteMany();
   };
   
   const Post = model('Post', postSchema);
