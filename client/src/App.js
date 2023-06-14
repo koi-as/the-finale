@@ -11,6 +11,11 @@ import {
   ApolloProvider
 } from '@apollo/client'; // import Apollo functions
 
+// Component imports
+import Feed from './components/Feed/Feed'
+import LeftSidebar from './components/LeftSidebar/LeftSidebar'
+import RightSidebar from './components/RightSidebar/RightSidebar'
+
 const test = "Hello Bitter! :D"
 // import components
 
@@ -23,10 +28,12 @@ function App() {
     <ApolloProvider client={client}>
       {test}
       <Router>
-        <div>
+        <div className='columns-3'>
           {/* add a navbar here */}
+          <LeftSidebar />
+          <Feed />
+          <RightSidebar />
           <Routes>
-            {/* add routes here */}
           </Routes>
         </div>
       </Router>
