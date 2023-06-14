@@ -75,7 +75,11 @@ user: {
     type: Schema.Types.ObjectId,
     ref: 'users'
 }
-})
+});
+
+postShema.statics.deleteManyPosts = async function () {
+    await this.deleteManyPosts();
+};
 
 const Post = model('Post', postShema)
 
