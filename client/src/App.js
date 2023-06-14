@@ -28,7 +28,7 @@ function App() {
     <ApolloProvider client={client}>
       {test}
       <Router>
-        <div className='columns-3'>
+        <div className='columns-3 gap-1'>
           {/* add a navbar here */}
           <LeftSidebar />
           <Feed />
