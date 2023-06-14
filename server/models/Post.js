@@ -1,50 +1,48 @@
-const { Schema, model, Types } = require('mongoose')
-const User = require('./User');
+const { Schema, model } = require('mongoose');
 
 const commentSchema = new Schema({
-    commentBody: {
-      type: String,
-      required: true,
-      maxlength: 280,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
+  commentBody: {
+    type: String,
+    required: true,
+    maxlength: 280,
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+}, {
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+  id: false,
+});
+
+const postSchema = new Schema({
+    content: String,
+    username: String,
     createdAt: {
-      type: Date,
+      type: Date, // Update the type to Date
       default: Date.now,
     },
-  }, {
-    toJSON: {
-      virtuals: true,
-      getters: true,
-    },
-    id: false,
-  });
-  
-  
-  
-  
-
-  const postSchema = new Schema({
-    body: String,
-    username: String,
-    createdAt: String,
     comments: [commentSchema],
     dislikes: [
       {
         username: String,
         createdAt: String,
-      }
+      },
     ],
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
+      ref: 'User',
+    },
   });
   
-  postSchema.virtual('commentCount').get(function() {
+  postSchema.virtual('commentCount').get(function () {
     return this.comments.length;
   });
   
@@ -52,6 +50,11 @@ const commentSchema = new Schema({
     await this.deleteMany();
   };
   
-  const Post = model('Post', postSchema);
+  let Post;
+  try {
+    Post = model('Post'); // Check if the model is already defined
+  } catch (error) {
+    Post = model('Post', postSchema); // Define the model if not already defined
+  }
   
-  module.exports = Post;  
+  module.exports = Post;
