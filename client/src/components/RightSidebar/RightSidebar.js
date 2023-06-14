@@ -3,7 +3,7 @@ import './rightSidebar.css'
 
 const RightSidebar = () => {
     return (
-        <div className="container mx-auto self-auto bg-slate-800">
+        <div className="container bg-slate-800 absolute inset-y-20 right-0 w-20">
             <div className="r-sidebar">
                 <div className='search-container flex-row'>
                     <input className='input' placeholder="Search"></input>

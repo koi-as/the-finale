@@ -4,7 +4,7 @@ import './leftSidebar.css'
 
 const LeftSidebar = () => {
     return (
-        <div className="container mx-auto self-auto bg-slate-800">
+        <div className="container bg-slate-800 absolute inset-y-20 left-0 w-20">
             <div className="nav">
                 <div className="nav-links inline-flex flex-col ">
                     <Link>Dashboard</Link>

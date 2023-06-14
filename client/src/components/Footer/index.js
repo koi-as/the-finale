@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="main-footer">
+    <div className="main-footer absolute inset-x-0 bottom-0">
       <div className="container">
         <div className="row">
           {/* Colimn1 */}
