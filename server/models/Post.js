@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose')
+const User = require('./User');
 
 const commentSchema = new Schema({
     commentBody: {
@@ -39,7 +40,7 @@ const commentSchema = new Schema({
     ],
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'users'
+      ref: 'User'
     }
   });
   
