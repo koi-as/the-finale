@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 // import css style if we create it
 import App from './App.js';
 // import serviceWorker if we create one
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
