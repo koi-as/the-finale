@@ -1,0 +1,59 @@
+[
+    {
+      "id": "1",
+      "body": "My entire full-stack cohort is full of weebs",
+      "username": "KevinInAPugMask",
+      "createdOn": "2023-06-22T19:00:00Z",
+      "comments": [
+        {
+          "commentBody": "Why so bitter bruh?",
+          "username": "2",
+          "createdAt": "2023-06-16T09:30:00Z",
+          "dislikes": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "body": "I tried to save five bucks on Publix sushi and got food poisoning",
+      "username": "Bowdumb",
+      "createdOn": "2023-06-28T19:32:17Z",
+      "comments": [
+        {
+          "commentBody": "Stop moving to Atlanta. We're full.",
+          "username": "1",
+          "createdAt": "2023-06-13T21:30:00Z",
+          "dislikes": 4
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "body": "Way too many tech bros",
+      "username": "MarnisCat",
+      "createdOn": "2023-06-09T04:04:10Z",
+      "comments": [
+        {
+          "commentBody": "I want to take handlebars.js and burn it!",
+          "username": "4",
+          "createdAt": "2023-06-18T09:38:00Z",
+          "dislikes": 0
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "body": "Mickey Mouse sounds like he just lost a fight at WaffleHouse",
+      "username": "superSal",
+      "createdOn": "2023-06-18T19:18:00Z",
+      "comments": [
+        {
+          "commentBody": "You mad?",
+          "username": "5",
+          "createdAt": "2023-06-18T05:59:00Z",
+          "dislikes": 4
+        }
+      ]
+    }
+  ]
+  
