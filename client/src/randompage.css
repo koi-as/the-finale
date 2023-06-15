@@ -80,7 +80,7 @@
     left: -2000px;
   }
   100% {
-    left: 100px;
+    right: 100px;
   }
 }
 
