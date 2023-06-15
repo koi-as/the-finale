@@ -1,97 +1,93 @@
-// import the models and anything else we need up here
-const { User, Post } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Post, Comment } = require('../models');
+const { signToken } = require('../utils/auth');
 
-// creating the resolvers
 const resolvers = {
-  // resolvers will go in here
-  // we need one object named Query: {},
   Query: {
-    users: async () => {
-      return User.find().populate('post');
+    // users: async () => {
+    //   return User.find().populate('posts');
+    // },
+    // user: async (parent, { username }) => {
+    //   return User.findOne({ username }).populate('posts');
+    // },
+    // posts: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Post.find(params)
+    //     .sort({ createdAt: -1 })
+    //     .populate('comments');
+    // },
+    // post: async (parent, { postId }) => {
+    //   return Post.findOne({ _id: postId }).populate('comments');
+    // },
+    // comments: async () => {
+    //   return Comment.find();
+    // },
+    // me: async (parent, args, context) => {
+    //   if (context.user) {
+    //     return User.findOne({ _id: context.user._id }).populate('posts');
+    //   }
+    //   throw new AuthenticationError('You must be logged in.');
+    // },
+    viewUser: async () => {
+      return await User.find()
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('post');
-    },
-    post: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Post.find(params).sort({ createdAt: -1 });
-    },
-    post: async (parent, { postId }) => {
-      return Post.findOne({ _id: postId });
-    },
+    viewPost: async () => {
+      return await Post.find()
+    }
   },
-  // addUser and login logic if needed later
-  Mutation: {
-    addPost: async (parent, { postText }, context) => {
-      if (context.user) {
-        const post = await post.create({
-          postText,
-          username: context.user.username,
-        });
+  // Mutation: {
+  //   addUser: async (parent, { username, email, password }) => {
+  //     const user = await User.create({ username, email, password });
+  //     const token = signToken(user);
+  //     return { token, user };
+  //   },
+  //   login: async (parent, { email, password }) => {
+  //     const user = await User.findOne({ email });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { posts: post._id } }
-        );
+  //     if (!user) {
+  //       throw new AuthenticationError('No user found with this email address');
+  //     }
 
-        return post;
-      }
-      // throw new AuthenticationError('Please login or sign up first');
-    },
-    addComment: async (parent, { postId, commentBody }, context) => {
-      if (context.user) {
-        return Post.findOneAndUpdate(
-          { _id: postId },
-          {
-            $addToSet: {
-              comments: { 
-                commentBody, 
-                username: context.user.username, 
-              },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      // throw new AuthenticationError('Please login or sign up first');
-    },
-    removePost: async (parent, { postId }, context) => {
-      if (context.user) {
-        const post = await Post.findOneAndDelete({
-          _id: postId,
-          username: context.user.username,
-        });
+  //     const correctPw = await user.isCorrectPassword(password);
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { posts: post._id } }
-        );
+  //     if (!correctPw) {
+  //       throw new AuthenticationError('Incorrect credentials');
+  //     }
 
-        return post;
-      }
-      // throw new AuthenticationError('Please login or sign up first');
-    },
-    removeComment: async (parent, { postId, commentId }, context) => {
-      if (context.user) {
-        return Post.findOneAndUpdate(
-          { _id: postId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                username: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-// throw new AuthenticationError('Please login or sign up first');
-    },
-  },
+  //     const token = signToken(user);
+
+  //     return { token, user };
+  //   },
+  //   addPost: async (parent, { content, createdBy }) => {
+  //     const post = await Post.create({
+  //       content,
+  //       createdBy,
+  //       createdOn: new Date().toISOString(),
+  //     });
+  //     return post;
+  //   },
+  //   addComment: async (parent, { content, createdBy, postId }) => {
+  //     const comment = await Comment.create({
+  //       commentBody: content,
+  //       username: createdBy,
+  //       createdOn: new Date().toISOString(),
+  //       post: postId,
+  //     });
+  //     return comment;
+  //   },
+  //   removePost: async (parent, { postId }) => {
+  //     const post = await Post.findOneAndDelete({ _id: postId });
+  //     return post;
+  //   },
+  //   removeComment: async (parent, { commentId }) => {
+  //     const comment = await Comment.findOneAndDelete({ _id: commentId });
+  //     return comment;
+  //   },
+  //   deleteUser: async (parent, { userId }) => {
+  //     const user = await User.findOneAndDelete({ _id: userId });
+  //     return user;
+  //   },
+  // },
 };
 
-module.exports = resolvers; // export resolvers
+module.exports = resolvers;

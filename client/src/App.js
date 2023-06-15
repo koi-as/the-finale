@@ -1,34 +1,30 @@
 // import react and apollo client
-import React from 'react'; // import react
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom'; // import react router
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider
-} from '@apollo/client'; // import Apollo functions
+import React from "react"; // import react
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // import react router
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"; // import Apollo functions
 
-const test = "Hello Bitter! :D"
-// import components
+// Component imports
+import Header from './components/Header';
+import Feed from './components/Feed/Feed'
+import LeftSidebar from './components/LeftSidebar/LeftSidebar'
+import RightSidebar from './components/RightSidebar/RightSidebar'
+import Footer from './components/Footer/index'
 
 const client = new ApolloClient({
-  cache: new InMemoryCache()
-})
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      {test}
       <Router>
-        <div>
-          {/* add a navbar here */}
-          <Routes>
-            {/* add routes here */}
-          </Routes>
+      <Header />
+        <div className=''>
+          <LeftSidebar />
+          <Feed />
+          <RightSidebar />
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   )
