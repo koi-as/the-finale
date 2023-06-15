@@ -22,6 +22,9 @@ const typeDefs = gql`
     viewPost: [Post]
   }
 
+  type Mutation {
+    addUser(username: String!, password: String!): User
+  }
 `;
 
 module.exports = typeDefs; // export typeDefs

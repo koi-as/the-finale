@@ -35,7 +35,7 @@ const resolvers = {
       return await Post.find()
     }
   },
-  // Mutation: {
+  Mutation: {
   //   addUser: async (parent, { username, email, password }) => {
   //     const user = await User.create({ username, email, password });
   //     const token = signToken(user);
@@ -87,7 +87,12 @@ const resolvers = {
   //     const user = await User.findOneAndDelete({ _id: userId });
   //     return user;
   //   },
-  // },
+    addUser: async (_, args) => {
+      const user = await new User(args)
+
+      return user
+    }
+  },
 };
 
 module.exports = resolvers;
