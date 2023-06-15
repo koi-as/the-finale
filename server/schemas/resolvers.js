@@ -91,7 +91,16 @@ const resolvers = {
       const user = await new User(args)
 
       return user
-    }
+    },
+    addPost: async (parent, { content, username }) => {
+      try {
+        const post = new Post({ content, username, createdAt: new Date().toISOString() });
+        await post.save();
+        return post;
+      } catch (err) {
+        throw new Error('Failed to create post');
+      }
+    },
   },
 };
 
