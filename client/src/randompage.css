@@ -6,11 +6,7 @@
 }
 .error {
   min-height: 100vh;
-<<<<<<< HEAD
   background: linear-gradient(0deg, rgb(106, 0, 0), black);
-=======
-  background: linear-gradient(0deg, rgb(70, 1, 1), black);
->>>>>>> main
 }
 
 .sky {
