@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "The final project for the bootcamp",
   "main": "server/server.js",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
   "scripts": {
     "install": "cd server && npm i && cd ../client && npm i",
     "dev": "concurrently \"npm run client\" \"npm run server\" ",
