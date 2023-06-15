@@ -29,17 +29,13 @@ const postSchema = new Schema({
       type: Date, // Update the type to Date
       default: Date.now,
     },
-    comments: [commentSchema],
-    dislikes: [
-      {
-        username: String,
-        createdAt: String,
-      },
-    ],
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-    },
+    // comments: [commentSchema],
+    // dislikes: [
+    //   {
+    //     username: String,
+    //     createdAt: String,
+    //   },
+    // ],
   });
   
   postSchema.virtual('commentCount').get(function () {
