@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <div className="main-footer absolute inset-x-0 bottom-0">
       <div className="container">
         <div className="row">
-          {/* Colimn1 */}
+          {/* Column1 */}
           <div className="col1">
             <h4>Contributors</h4>
             <ul className="list-unstyled">
