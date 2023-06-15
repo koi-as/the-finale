@@ -33,7 +33,7 @@ const postSchema = new Schema({
       type: Date, // Update the type to Date
       default: Date.now,
     },
-    // comments: [commentSchema],
+    comments: [commentSchema],
     // dislikes: [
     //   {
     //     username: String,
