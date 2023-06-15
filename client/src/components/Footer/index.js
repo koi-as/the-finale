@@ -10,20 +10,23 @@ const Footer = () => {
           {/* Column1 */}
           <div className="col1">
             <h4>Contributors</h4>
-            <ul className="list-unstyled">
+            {/* going to see if moving these down to like 26 will fix the issue... */}
+            {/* <ul className="list-unstyled">
               <li>Marni Luka</li>
               <li> Josh Claxton</li>
               <li>Sal Monzoor</li>
               <li>Kevin Khamphounvong</li>
               <li>Alex </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
         <hr />
         <div className="row">
           <p className="col-small">
-            &copy;{new Date().getFullYear()} Bitter Incoprporated | All Rights
-            Reserved To Bitter | Terms Of Service | Privacy
+            &copy;{new Date().getFullYear()} Contributors: Marni Luka, Josh
+            Claxton,Sal Monzoor,Kevin Khamphounvong, & Alex | Bitter
+            Incoprporated | All Rights Reserved To Bitter | Terms Of Service |
+            Privacy
           </p>
         </div>
       </div>
