@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Feed from './components/Feed/Feed'
 import LeftSidebar from './components/LeftSidebar/LeftSidebar'
 import RightSidebar from './components/RightSidebar/RightSidebar'
-import Footer from './components/Footer/index'
+import Footer from './components/Footer'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
