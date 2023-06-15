@@ -6,7 +6,7 @@
 }
 .error {
   min-height: 100vh;
-  background: linear-gradient(0deg, rgb(156, 0, 0), black);
+  background: linear-gradient(0deg, rgb(106, 0, 0), black);
 }
 
 .sky {
@@ -68,8 +68,10 @@
 .bird {
   position: absolute;
   bottom: 200px;
-  left: 100px;
+  left: 0px;
   max-width: 300px;
+  animation: birdGo;
+  animation-duration: 3s;
 }
 
 .grass {
