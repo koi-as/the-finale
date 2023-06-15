@@ -1,16 +1,26 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_COMMENTS = gql`
-  query Comments {
-    comments {
-      id
-      dislikes
-      createdOn
-      createdBy {
-        id
-        username
-      }
-      content
+export const GET_POST = gql`
+query Post {
+  viewPost {
+    _id
+    content
+    createdAt
+    username
+  }
+}
+`;
+
+export const GET_USER = gql`
+query User {
+  viewUser {
+    _id
+    username
+    password
+    followers {
+      _id
+      username
     }
   }
-`;
+}
+`

@@ -23,7 +23,11 @@ const commentSchema = new Schema({
 });
 
 const postSchema = new Schema({
-    content: String,
+    content: {
+      type: String,
+      minlength: 1,
+      maxlength: 280,
+    },
     username: String,
     createdAt: {
       type: Date, // Update the type to Date
