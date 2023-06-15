@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 9001; // you can change the port if you'd like,
 
 const server = new ApolloServer({ // instantiate the ApolloServer with our schema setup
   typeDefs,
-  resolvers
+  resolvers,
+  persistedQueries: false
 })
 
 const app = express(); 
