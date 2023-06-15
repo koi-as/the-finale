@@ -72,6 +72,16 @@
   max-width: 300px;
   animation: birdGo;
   animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes birdGo {
+  0% {
+    left: -2000px;
+  }
+  100% {
+    left: 100px;
+  }
 }
 
 .grass {
