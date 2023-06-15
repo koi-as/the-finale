@@ -4,7 +4,7 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className="main-footer absolute inset-x-0 bottom-0">
+    <div className="main-footer absolute inset-x-0 bottom-0 text-slate-200">
       <div className="container">
         <div className="row">
           {/* Column1 */}
