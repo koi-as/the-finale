@@ -28,7 +28,7 @@ app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 
-// Allows front-end access to post data
+// Allows front-end access to post data for main feed.
 app.get('/api/posts', async (req, res) => {
   try {
     const posts = await Post.find().populate('comments');

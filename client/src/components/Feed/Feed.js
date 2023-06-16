@@ -24,7 +24,6 @@ const Feed = () => {
                 Posted by{' '}
                 <span style={{ fontWeight: 'bold'}}>{post.username}</span>{' '}
                 on {post.createdAt}
-                {/* Posted by {post.username} on {post.createdAt} */}
               </p>
             </div>
           </div>
