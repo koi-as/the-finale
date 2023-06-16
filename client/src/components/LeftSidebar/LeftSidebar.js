@@ -4,7 +4,7 @@ import './leftSidebar.css'
 
 const LeftSidebar = () => {
     return (
-        <div className="container flex bg-slate-800 absolute inset-y-20 left-0 w-2/12">
+        <div className="container flex bg-slate-800 absolute inset-y-20 left-0 w-2/12 border-2 border-stone-200">
             <div className="nav">
                 <div className="nav-links inline-flex flex-col text-stone-200 text-center ml-12">
                     <Link className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group m-2 mt-4">
