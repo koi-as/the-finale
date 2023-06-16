@@ -15,7 +15,7 @@ const Footer = () => {
               <Link> Josh Claxton ||</Link>
               <Link> Sal Monzoor ||</Link>
               <Link> Kevin Khamphounvong ||</Link>
-              <Link> Alex Seidensticker||</Link>
+              <Link> Alex Seidensticker ||</Link>
             </ul>
           </div>
         </div>

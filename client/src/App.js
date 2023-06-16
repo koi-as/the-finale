@@ -5,12 +5,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"; //
 
 // Component imports
 import Header from './components/Header';
-import Body from './components/Body';
-import Feed from './components/Feed/Feed'
-import LeftSidebar from './components/LeftSidebar/LeftSidebar'
-import RightSidebar from './components/RightSidebar/RightSidebar'
 import Footer from './components/Footer'
-
+import Home from "./pages/Home";
+import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -21,12 +20,12 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <Header />
-        <div className=''>
-          <Body />
-          <LeftSidebar />
-          <Feed />
-          <RightSidebar />
-        </div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+            <Route path='settings' element={<Settings />} />
+            <Route path='profile' element={<Profile/>} />
+            <Route path='login' element={<Login />} />
+        </Routes>
         <Footer />
       </Router>
     </ApolloProvider>
