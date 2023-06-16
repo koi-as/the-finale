@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
+import logo from '../Assets/logo.JPG'
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
     return (
         <header className='absolute inset-x-0 top-0 bg-slate-950'>
             <div className="flex justify-center items-center h-screen">
-                <img src="./bitterLogo1.JPG" className="nav-logo-link inline absolute left-5 top-5" alt="Bitter Logo"/>
+                <img src={logo} className="nav-logo-link inline absolute left-5 top-5" alt="Bitter Logo"/>
             </div>
             <div className='flex inline'>
                 <p className='absolute left-20 top-5 text-xl text-slate-200'>
