@@ -22,9 +22,8 @@ const Feed = () => {
           className='py-3 px-5 m-3 block w-40 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
           placeholder='Name Thyself'
         />
-        <input
-          type='text'
-          className='py-3 px-5 block w-96 h-24 border-gray-200 rounded-3xl text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
+        <textarea
+          className='bitter-post py-3 px-5 block w-104 h-24 border-gray-200 rounded-3xl text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400' cols='80' rows='10' maxLength='280'
           placeholder='Spread the Bitterness'
         />
         <button className='flex items-center justify-center px-4 py-2 m-3 text-3xl font-bold leading-6 text-stone-200 whitespace-no-wrap bg-transparent border-2 border-stone-200 rounded-full shadow-sm hover:bg-white hover:text-stone-950 hover:bg-transparent focus:outline-none'>

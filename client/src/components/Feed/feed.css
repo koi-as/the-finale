@@ -38,3 +38,12 @@
   .post-username {
     font-weight:bolder;
   }
+
+  textarea {
+    overflow-y: hidden;
+    max-height: 100px;
+  }
+
+  .bitter-post {
+    resize: none;
+  }
