@@ -25,11 +25,10 @@ const Feed = () => {
     const newPost = {
       username: username,
       content: postContent,
+      createdAt: new Date().toLocaleString()
     };
 
-    // Adds the new post to the front of the array so that it renders at the top of the feed.
     setPosts([newPost, ...posts]);
-
     setUsername('');
     setPostContent('');
   };
@@ -65,7 +64,7 @@ const Feed = () => {
               <div>
                 <h3 className='post-title'>{post.username}</h3>
                 <p className='post-content'>{post.content}</p>
-                <p className='post-info'>Posted on {new Date().toLocaleString()}</p>
+                <p className='post-info'>Posted on {post.createdAt}</p> {/* Use the stored creation timestamp */}
               </div>
             </div>
           ))}
