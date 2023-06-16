@@ -5,6 +5,7 @@ mutation User($username: String!, $password: String!) {
     addUser(username: $username, password: $password) {
       _id
       username
+      email
       password
     }
   }

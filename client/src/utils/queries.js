@@ -16,6 +16,7 @@ query User {
   viewUser {
     _id
     username
+    email
     password
     followers {
       _id
