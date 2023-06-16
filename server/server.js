@@ -4,6 +4,9 @@ const path = require('path'); // import path
 const { ApolloServer } = require('apollo-server-express'); // import apollo-server-express
 // import local files
 const { typeDefs, resolvers } = require('./schemas');
+
+const Post = require('./models/Post');
+
 // import db connection
 const db = require('./config/connection')
 
@@ -26,6 +29,18 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
+
+// Added GET route for database seed posts.
+app.get('/api/posts', async (req, res) => {
+  try {
+    const posts = await Post.find().populate('comments');
+    res.json(posts);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to fetch posts' });
+  }
+});
+
 
 const startApolloServer = async () => { // declare function named startApolloServer
   await server.start(); // start server
