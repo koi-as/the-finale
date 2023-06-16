@@ -9,6 +9,7 @@ import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import LightMode from "./pages/LightMode";
+import Signup from "./pages/Signup"
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -24,6 +25,7 @@ function App() {
             <Route path='profile' element={<Profile/>} />
             <Route path='login' element={<Login />} />
             <Route path='lightmode' element={<LightMode />} />
+            <Route path='signup' element={<Signup />} />
         </Routes>
       </Router>
     </ApolloProvider>
