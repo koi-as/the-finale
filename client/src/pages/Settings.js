@@ -1,13 +1,12 @@
 import React from "react";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar";
+import Settings from "../components/Settings/Settings";
 
-export default function Settings() {
+export default function SettingsLayout() {
     return(
         <>
         <LeftSidebar />
-        <div>
-            <h1>Settings</h1>
-        </div>
+        <Settings />
         </>
     )
 }
