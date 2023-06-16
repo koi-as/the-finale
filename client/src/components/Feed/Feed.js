@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import './feed.css';
 
 const Feed = () => {
@@ -28,18 +27,8 @@ const Feed = () => {
       content: postContent,
     };
 
-    fetch('/api/posts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newPost),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts([...posts, data]);
-      })
-      .catch((error) => console.log(error));
+    // Adds the new post to the front of the array so that it renders at the top of the feed.
+    setPosts([newPost, ...posts]);
 
     setUsername('');
     setPostContent('');
@@ -47,7 +36,7 @@ const Feed = () => {
 
   return (
     <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-20 border-2 w-8/12'>
-      <div className='feed-cont flex inline-flex flex-col h-128 overflow-y-hidden'>
+      <div className='feed-cont flex inline-flex flex-col h-128 overflow-y-scroll'>
         <input
           type='text'
           className='py-3 px-5 m-3 block w-40 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
@@ -71,18 +60,12 @@ const Feed = () => {
           +
         </button>
         <div className='post-container overflow-y-scroll'>
-          {posts.map((post) => (
-            <div className='feedCard' key={post._id}>
+          {posts.map((post, index) => (
+            <div className='feedCard' key={index}>
               <div>
-                <h3 className='post-title'>{post.title}</h3>
+                <h3 className='post-title'>{post.username}</h3>
                 <p className='post-content'>{post.content}</p>
-                <p className='post-info'>
-                  Posted by{' '}
-                  <span style={{ fontWeight: 'bold', color: 'darkred' }}>
-                    {post.username}
-                  </span>{' '}
-                  on {post.createdAt}
-                </p>
+                <p className='post-info'>Posted on {new Date().toLocaleString()}</p>
               </div>
             </div>
           ))}
