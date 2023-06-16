@@ -41,6 +41,18 @@ app.get('/api/posts', async (req, res) => {
   }
 });
 
+app.post('/api/posts', async (req, res) => {
+  try {
+    const { username, content } = req.body;
+    const newPost = await Post.create({ username, content });
+
+    res.status(201).json(newPost);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to create a new post' });
+  }
+});
+
 
 const startApolloServer = async () => { // declare function named startApolloServer
   await server.start(); // start server

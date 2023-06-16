@@ -11,9 +11,11 @@ import RightSidebar from '../components/RightSidebar/RightSidebar';
 export default function Home() {
   return (
       <div>
+        <Header />
         <LeftSidebar />
         <Feed />
         <RightSidebar />
+        <Footer />
       </div>
 
   )
