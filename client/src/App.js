@@ -22,10 +22,10 @@ function App() {
       <Router>
       <Header />
         <div className=''>
-          {/* <Body /> */}
-          {/* <LeftSidebar />
+          <Body />
+          <LeftSidebar />
           <Feed />
-          <RightSidebar /> */}
+          <RightSidebar />
         </div>
         <Footer />
       </Router>

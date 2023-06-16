@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
@@ -10,12 +10,12 @@ const Footer = () => {
           {/* Column1 */}
           <div className="col1">
             <h4>Contributors:</h4>
-            <ul className="list-unstyled">
-              <li>Marni Luka</li>
-              <li> Josh Claxton</li>
-              <li>Sal Monzoor</li>
-              <li>Kevin Khamphounvong</li>
-              <li>Alex </li>
+            <ul className="Linkst-unstyled">
+              <Link>|| Marni Luka ||</Link>
+              <Link> Josh Claxton ||</Link>
+              <Link> Sal Monzoor ||</Link>
+              <Link> Kevin Khamphounvong ||</Link>
+              <Link> Alex Seidensticker||</Link>
             </ul>
           </div>
         </div>
