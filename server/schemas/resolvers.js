@@ -101,6 +101,9 @@ const resolvers = {
         throw new Error('Failed to create post');
       }
     },
+    // addComment: async (parent, {postId, commentBody, username}, context) => {
+      
+    // }
   },
 };
 
