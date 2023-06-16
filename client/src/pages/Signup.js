@@ -2,15 +2,14 @@ import React from "react";
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar";
+import SignUp from "../components/SignUp/SignUp";
 
-export default function Login() {
+export default function LoginLayout() {
     return(
         <>
         <Header />
         <LeftSidebar />
-        <div>
-            <h1>Signup</h1>
-        </div>
+        <SignUp />
         <Footer />
         </>
     )
