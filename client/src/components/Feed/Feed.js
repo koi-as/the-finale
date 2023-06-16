@@ -3,39 +3,50 @@ import { Link } from 'react-router-dom';
 import './feed.css';
 
 const Feed = () => {
-    const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        fetch('/api/posts')
-            .then((response) => response.json())
-            .then((data) => setPosts(data))
-            .catch((error) => console.log(error));
-    }, []);
+  useEffect(() => {
+    fetch('/api/posts')
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+      .catch((error) => console.log(error));
+  }, []);
 
-    return (
-        <div className='container bg-slate-800 absolute ml-56 inset-y-20 w-2/4'>
-            <div className='feed-cont inline-flex flex-col'>
-                <input
-                    type='text'
-                    className='py-3 px-5 block w-72 border-gray-200 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
-                    placeholder='Input text'
-                />
-                {posts.map((post) => (
-                    <div className='feedCard' key={post._id}>
-                        <div>
-                            <h3 className='post-title'>{post.title}</h3>
-                            <p className='post-content'>{post.content}</p>
-                            <p className='post-info'>
-                                Posted by{' '}
-                                <span style={{ fontWeight: 'bold' }}>{post.username}</span>{' '}
-                                on {post.createdAt}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+ 
+  const firstThreePosts = posts.slice(0, 3);
+
+  return (
+    <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-20 border-2 w-8/12'>
+      <div className='feed-cont flex inline-flex flex-col'>
+        <input
+          type='text'
+          className='py-3 px-5 m-3 block w-40 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
+          placeholder='Name Thyself'
+        />
+        <input
+          type='text'
+          className='py-3 px-5 block w-96 h-24 border-gray-200 rounded-3xl text-xl focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
+          placeholder='Spread the Bitterness'
+        />
+        <button className='flex items-center justify-center px-4 py-2 m-3 text-3xl font-bold leading-6 text-stone-200 whitespace-no-wrap bg-transparent border-2 border-stone-200 rounded-full shadow-sm hover:bg-white hover:text-stone-950 hover:bg-transparent focus:outline-none'>
+          +
+        </button>
+        {firstThreePosts.map((post) => (
+          <div className='feedCard' key={post._id}>
+            <div>
+              <h3 className='post-title'>{post.title}</h3>
+              <p className='post-content'>{post.content}</p>
+              <p className='post-info'>
+                Posted by{' '}
+                <span style={{ fontWeight: 'bold', color: '#7f1a1a' }}>{post.username}</span>{' '}
+                on {post.createdAt}
+              </p>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Feed;
