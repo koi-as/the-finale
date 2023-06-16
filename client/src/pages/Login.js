@@ -9,9 +9,7 @@ export default function Login() {
         <>
         <Header />
         <LeftSidebar />
-        <div>
-            <h1>Login</h1>
-        </div>
+        <LoginForm />
         <Footer />
         </>
     )

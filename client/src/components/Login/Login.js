@@ -1,38 +1,53 @@
 import React, { useState } from 'react';
 import './login.css'
 
+
 const LoginForm = () => {
-  const [userValue, setUserValue] = useState();
-  const [passValue, setPassValue] = useState();
+  const [formState, setFormState] = useState('')
+  const [userValue, setUserValue] = useState('');
+  const [passValue, setPassValue] = useState('');
+
+  let loginAttempt = 0;
+
+  const handleChange = (e) => {
+    const { username, value } = e.target
+
+    setFormState({
+      ...formState,
+      [username]: value
+    })
+  }
 
   const noLogin = () => {
-    console.log('You cant log in');
     setUserValue('');
     setPassValue('');
+    loginAttempt++
+    if (loginAttempt > 3) {
+      window.close()
+    };
   };
 
   return (
-    <div className='login-form container flex justify-center absolute inset-x-16 inset-y-24 w-8/12'>
-      <div className="w-full max-w-lg">
-        <form className="bg-slate-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" for="username">
-              Username
+    <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-20 border-2 w-8/12'>
+      <div className='signup-cont flex inline-flex flex-col'>
+        <div className="signip-title">
+          <h1 className="signup-header title text-center mb-2">Login</h1>
+        </div>
+        <div className="signup-form-container">
+          <form className="signup-form mb-2">
+            <label>
+              <h2 className='font-bold text-center'>Username</h2>
             </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value={userValue} id="username" type="text" placeholder="Username" />
-          </div>
-          <div className="mb-6">
-            <label className="block text-white text-sm font-bold mb-2" for="password">
-              Password
-            </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" value={passValue} id="password" type="password" placeholder="******************" />
-          </div>
-          <div className="flex items-center justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onCLick={noLogin}>
-              Sign In
-            </button>
-          </div>
-        </form>
+            <input className='mb-2 p-3 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-500 dark:border-gray-700 dark:text-gray-400' placeholder="Enter a username..." value={userValue} onChange={handleChange}></input>
+            <h2 className='font-bold text-center'>Password</h2>
+            <input className='mb-2 p-3 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-500 dark:border-gray-700 dark:text-gray-400' placeholder="Enter a password..." value={passValue} onChange={handleChange}></input>
+            <div className="flex items-center justify-center">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={noLogin}>
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
