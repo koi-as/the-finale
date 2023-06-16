@@ -6,7 +6,7 @@
 }
 .error {
   min-height: 100vh;
-  background: linear-gradient(0deg, rgb(106, 0, 0), black);
+  background: linear-gradient(0deg, rgb(67, 2, 2), rgb(0, 0, 0));
 }
 
 .sky {
@@ -49,13 +49,13 @@
 }
 
 .field h2 {
-  color: black;
+  color: rgb(179, 0, 0);
   font-size: 2em;
   margin-bottom: 20px;
 }
 .field a {
   background: black;
-  color: red;
+  color: rgb(179, 0, 0);
   width: 160px;
   height: 50px;
   line-height: 50px;
@@ -74,7 +74,25 @@
   animation-duration: 3s;
 }
 
-.grass {
+@keyframes birdGo {
+  from {
+    transform: rotate(-30deg) translateY(-100%);
+    opacity: 0.5;
+  }
+  to {
+    transform: rotate(0deg) translateY(0%);
+    opacity: 0.3;
+  }
+
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* .grass {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -82,12 +100,4 @@
   background: url(../src/img/grass.png);
   background-position: bottom;
   animation: animateGrass 0.2s linear infinite;
-}
-@keyframes animateGrass {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -94px, 0;
-  }
-}
+} */
