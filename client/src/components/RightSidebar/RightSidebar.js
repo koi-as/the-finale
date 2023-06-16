@@ -3,7 +3,7 @@ import './rightSidebar.css'
 
 const RightSidebar = () => {
     return (
-        <div className="container flex bg-slate-800 absolute inset-y-20 right-0 w-2/12 p-4 border-2 border-stone-200">
+        <div className="container flex bg-slate-800 absolute inset-y-24 right-0 w-2/12 p-4 border-2 border-stone-200">
             <div className="r-sidebar ">
                 <div className='search-container flex-row '>
                     <input className='input w-52 border rounded-full p-2 ' placeholder="Search"></input>
@@ -13,7 +13,7 @@ const RightSidebar = () => {
                 <div className="tags-containter inline-flex flex-col text-stone-200 text-lg">
                     <h2 className="text-2xl">Popular Tags:</h2>
                     <ul>
-                        <li>#Bitter</li>
+                        <li>#Nope</li>
                         <li>#NegativeEnergy</li>
                         <li>#YesTodaySatan</li>
                         <li>#HateYourself</li>
