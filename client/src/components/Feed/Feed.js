@@ -14,7 +14,7 @@ const Feed = () => {
 
   return (
     <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-20 border-2 w-8/12'>
-      <div className='feed-cont flex inline-flex flex-col h-128 overflow-y-scroll'>
+      <div className='feed-cont flex inline-flex flex-col h-128 overflow-y-hidden'>
         <input
           type='text'
           className='py-3 px-5 m-3 block w-40 border-gray-200 rounded-full text-m text-center focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
@@ -27,6 +27,7 @@ const Feed = () => {
         <button className='flex items-center justify-center px-4 py-2 m-3 text-3xl font-bold leading-6 text-stone-200 whitespace-no-wrap bg-transparent border-2 border-stone-200 rounded-full shadow-sm hover:bg-white hover:text-stone-950 hover:bg-transparent focus:outline-none'>
           +
         </button>
+        <div className='post-container overflow-y-scroll'>
         {posts.map((post) => (
           <div className='feedCard' key={post._id}>
             <div>
@@ -40,6 +41,7 @@ const Feed = () => {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );
