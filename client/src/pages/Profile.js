@@ -1,13 +1,12 @@
 import React from "react";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar";
+import Profile from "../components/Profile/Profile";
 
-export default function Profile() {
+export default function ProfileLayout() {
     return(
         <>
         <LeftSidebar />
-        <div>
-            <h1>Profile</h1>
-        </div>
+        <Profile />
         </>
     )
 }
