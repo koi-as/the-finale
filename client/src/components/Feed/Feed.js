@@ -13,7 +13,7 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-20 border-2 w-8/12'>
+    <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-24 border-2 w-8/12'>
       <div className='feed-cont flex inline-flex flex-col h-128 overflow-y-hidden'>
         <input
           type='text'
