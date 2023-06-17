@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  .feed-cont::-webkit-scrollbar {
+    display: none;
+  }
   
   .feedCard {
     background-color: #aeabab;
