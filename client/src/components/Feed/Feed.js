@@ -64,7 +64,7 @@ const Feed = () => {
               <div>
                 <h3 className='post-title'>{post.username}</h3>
                 <p className='post-content'>{post.content}</p>
-                <p className='post-info'>Posted on {post.createdAt}</p>
+                <p className='post-info'>Defiled at {post.createdAt}</p>
               </div>
             </div>
           ))}
