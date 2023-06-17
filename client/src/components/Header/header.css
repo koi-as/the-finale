@@ -6,3 +6,15 @@ header {
     width: 55px;
     height: 55px;
 }
+
+/* .logo {
+    width:20;
+    height: 20;
+    border: 2;
+    border-radius: rounded- h-20 border-2 rounded-full
+} */
+
+.logo-style {
+    width: 60px;
+    height: 80px;
+}
