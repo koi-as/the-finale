@@ -9,12 +9,7 @@ const Header = () => {
       <div className="flex h-screen">
         <NavLink className="nav-logo-link inline absolute left-5 top-2" to="/" style={{ width: '80px', height: '80px' }}>
           <img
-            src={logo}
-            className="logo-style border-2 rounded-full"
-            alt="Bitter Logo"
-            style={{ width: '80px', height: '80px' }}
-            
-          />
+            src={logo} className="logo-style border-2 rounded-full" alt="Bitter Logo" style={{ width: '80px', height: '80px' }}/>
         </NavLink>
       </div>
       <div className="flex inline">
