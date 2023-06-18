@@ -6,6 +6,7 @@ const { ApolloServer } = require('apollo-server-express'); // import apollo-serv
 const { typeDefs, resolvers } = require('./schemas');
 
 const Post = require('./models/Post');
+const User = require('./models/User');
 
 // import db connection
 const db = require('./config/connection')
@@ -41,6 +42,7 @@ app.get('/api/posts', async (req, res) => {
   }
 });
 
+// Added POST route for posting to the database from the main feed.
 app.post('/api/posts', async (req, res) => {
   try {
     const { username, content } = req.body;
@@ -50,6 +52,17 @@ app.post('/api/posts', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to create a new post' });
+  }
+});
+
+app.post('/api/users', async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+    const newUser = await User.create({ username, email, password });
+    res.status(201).json(newUser);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to create a new user' });
   }
 });
 
