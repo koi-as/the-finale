@@ -9,7 +9,8 @@ import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import LightMode from "./pages/LightMode";
-import Signup from "./pages/Signup"
+import Signup from "./pages/Signup";
+import ErrorPage from "./pages/Error";
 
 const client = new ApolloClient({
   uri: 'http://localhost:9001/graphql',
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/lightmode' element={<LightMode />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='error' element={<ErrorPage />} />
         </Routes>
       </Router>
     </ApolloProvider>
