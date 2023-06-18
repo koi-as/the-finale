@@ -7,14 +7,13 @@ class AuthService {
 
     loggedIn() {
         const token = this.getToken()
-
         return token && !this.isTokenExpired(token) ? true : false
     }
 
     isTokenExpired(token) {
         const decoded = decode(token)
 
-        if (decode.exp < Date.now() / 1000) {
+        if (decoded.exp < Date.now() / 1000) {
             localStorage.removeItem('id_token')
             return true
         }
@@ -33,7 +32,7 @@ class AuthService {
 
     logout() {
         localStorage.removeItem('id_token')
-        window.location.reload
+        window.location.reload()
     }
 }
 
