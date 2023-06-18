@@ -12,6 +12,7 @@ import LightMode from "./pages/LightMode";
 import Signup from "./pages/Signup"
 
 const client = new ApolloClient({
+  uri: 'http://localhost:9001/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -21,11 +22,11 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-            <Route path='settings' element={<Settings />} />
-            <Route path='profile' element={<Profile/>} />
-            <Route path='login' element={<Login />} />
-            <Route path='lightmode' element={<LightMode />} />
-            <Route path='signup' element={<Signup />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/lightmode' element={<LightMode />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
       </Router>
     </ApolloProvider>

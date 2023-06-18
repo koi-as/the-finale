@@ -36,9 +36,10 @@ const userSchema = new Schema({
 })
 
 userSchema
-.virtual('Followers')
-.get(function() {
-    return this.followers.length
+  .virtual('Followers')
+  .get(function() {
+    return this.followers.length;
+  });
 
 
 // username: String,
@@ -46,7 +47,7 @@ userSchema
 // email: String,
 // createdAt: String,
 // posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
-});
+// });
 
 // Pre-save middleware to create password
 userSchema.pre('save', async function (next) {
@@ -63,6 +64,6 @@ userSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
 
-const User = model('User', userSchema)
+const User = model('User', userSchema);
 
-module.exports = User
+module.exports = User;

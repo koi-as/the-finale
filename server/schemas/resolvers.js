@@ -5,19 +5,22 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     viewUser: async () => {
-      return await User.find()
+      return await User.find();
     },
     viewPost: async () => {
-      return await Post.find()
-    }
+      return await Post.find();
+    },
   },
   Mutation: {
-    addUser: async (_, args) => {
-      const user = await new User(args)
-      const token = signToken(user)
-      return {token, user}
+    addUser: async (_, { username, email, password }) => {
+      console.log(username, email, password);
+      const user = new User({ username, email, password });
+      console.log(user);
+      await user.save();
+      const token = signToken(user);
+      return { token, user };
     },
-    addPost: async (parent, { content, username }) => {
+    addPost: async (_, { content, username }) => {
       try {
         const post = new Post({ content, username, createdAt: new Date().toISOString() });
         await post.save();
@@ -26,19 +29,19 @@ const resolvers = {
         throw new Error('Failed to create post');
       }
     },
-    login: async (parent, {username, password}) => {
-      const user = await User.findOne({username})
+    login: async (_, { username, password }) => {
+      const user = await User.findOne({ username });
       if (!user) {
-        throw new AuthenticationError('Invalid')
+        throw new AuthenticationError('Invalid');
       }
-      const correctPW = await user.isCorrectPassword(password)
+      const correctPW = await user.isCorrectPassword(password);
       if (!correctPW) {
-        throw new AuthenticationError('Invalid')
+        throw new AuthenticationError('Invalid');
       }
-      const token = signToken(user)
-      return {token, user}
-    }
-    // addComment: async (parent, {postId, commentBody, username}, context) => {
+      const token = signToken(user);
+      return { token, user };
+    },
+    // addComment: async (parent, { postId, commentBody, username }, context) => {
       
     // }
   },
