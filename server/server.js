@@ -4,7 +4,9 @@ const path = require('path'); // import path
 const { ApolloServer } = require('apollo-server-express'); // import apollo-server-express
 // import local files
 const { typeDefs, resolvers } = require('./schemas');
-
+const { createHttpLink } = require('@apollo/client');
+const { setContext } = require('@apollo/client/link/context');
+const AuthService = require('./utils/auth');
 const Post = require('./models/Post');
 const User = require('./models/User');
 
@@ -22,6 +24,19 @@ const server = new ApolloServer({ // instantiate the ApolloServer with our schem
 const app = express(); 
 app.use(express.urlencoded({ extended: true })); // allow post requests
 app.use(express.json()); // allow http requests
+
+const httpLink = createHttpLink({ uri: 'http://localhost:9001/graphql'});
+
+const authLink = setContext((_, { headers }) => {
+  const token = AuthService.getToken();
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')))
