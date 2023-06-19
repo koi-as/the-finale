@@ -23,8 +23,7 @@ export default function SignUp() {
 
 
     const handleFormSubmit = async (e) => {
-        e.preventDefault()
-        // console.log(username, password, email)
+        e.preventDefault();
 
         try {
             const { data } = await addUser({
@@ -35,6 +34,7 @@ export default function SignUp() {
             setUsername('');
             setEmail('');
             setPassword('');
+            window.location.href="/login";
 
         } catch (err) {
             console.log('Error creating user:', err);

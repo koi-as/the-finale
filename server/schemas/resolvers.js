@@ -30,17 +30,22 @@ const resolvers = {
       }
     },
     login: async (_, { username, password }) => {
+      console.log("Login resolver called. Username:", username, "Password:", password);
       const user = await User.findOne({ username });
+      console.log("User found:", user);
       if (!user) {
         throw new AuthenticationError('Invalid');
       }
       const correctPW = await user.isCorrectPassword(password);
+      console.log("Password check result:", correctPW);
       if (!correctPW) {
         throw new AuthenticationError('Invalid');
       }
       const token = signToken(user);
+      console.log("Token:", token);
       return { token, user };
     },
+    
     // addComment: async (parent, { postId, commentBody, username }, context) => {
       
     // }
