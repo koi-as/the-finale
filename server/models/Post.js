@@ -34,12 +34,9 @@ const postSchema = new Schema({
       default: Date.now,
     },
     comments: [commentSchema],
-    // dislikes: [
-    //   {
-    //     username: String,
-    //     createdAt: String,
-    //   },
-    // ],
+    // dislikes: {
+    //   type: Number,
+    // }
   });
   
   postSchema.virtual('commentCount').get(function () {
