@@ -41,6 +41,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    deletePost: async (_, { postId }) => {
+      const post = await Post.findOneAndDelete({
+        _id: postId
+      });
+      return post; 
+    }
     // addComment: async (parent, { postId, commentBody, username }, context) => {
       
     // }
