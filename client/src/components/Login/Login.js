@@ -73,7 +73,7 @@ const LoginForm = () => {
             ></input>
             <div className="flex items-center justify-center">
               <button className="flex px-4 py-2 my-2 text-l font-bold leading-6 text-stone-200 whitespace-no-wrap bg-transparent border-2 border-stone-200 rounded-full shadow-sm hover:bg-white hover:text-stone-950 hover:bg-transparent focus:outline-none" 
-                type="submit"
+                type="submit" onClick={noLogin}
               >
                 Sign In
               </button>
