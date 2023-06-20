@@ -34,7 +34,7 @@ const LoginForm = () => {
     } catch (err) {
       console.log('Error signing in:', err);
       noLogin();
-      alert('Invalid username or password');
+      alert('You are not worthy - Please verify your credentials!');
     }
   };
 
