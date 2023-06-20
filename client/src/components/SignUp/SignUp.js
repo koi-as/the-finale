@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
-import './signup.css'
 import { useMutation } from "@apollo/client";
+import { useNavigate } from 'react-router-dom';
+import './signup.css'
 import { ADD_USER } from "../../utils/mutations";
 
 export default function SignUp() {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    const [addUser, { error, data }] = useMutation(ADD_USER)
+    const [addUser, { error, data }] = useMutation(ADD_USER);
 
     const handleNewUsername = (e) => {
-        setUsername(e.target.value)
-    }
-    const handleNewPassword = (e) => {
-        setPassword(e.target.value)
-    }
-    const handleNewEmail = (e) => {
-        setEmail(e.target.value)
+        setUsername(e.target.value);
     }
 
+    const handleNewPassword = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleNewEmail = (e) => {
+        setEmail(e.target.value);
+    }
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -28,19 +30,19 @@ export default function SignUp() {
         try {
             const { data } = await addUser({
                 variables: { username, email, password }
-            })
-            console.log("User successfully added.");
+            });
 
+            console.log("User successfully added.");
             setUsername('');
             setEmail('');
             setPassword('');
-            window.location.href="/login";
+            
+            navigate('/login');
 
         } catch (err) {
             console.log('Error creating user:', err);
         }
     };
-
 
     return (
         <div className='container bg-slate-800 flex justify-center absolute ml-64 inset-y-24 border-2 w-8/12'>

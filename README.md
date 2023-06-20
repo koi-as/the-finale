@@ -24,10 +24,18 @@ Bitter stands as a testament to the team's creativity and innovation, offering u
 
 This application was created using the MERN stack.
 
+## Deployed Application
+
+Visit our deployed site at https://bitterbitterbitter.herokuapp.com/
+
 ## Credits
 
-Kevin: <!-- Your contact info,  -->
-Sal: salzm - Github Username
-Marni: <!-- and anything else you wanna put here. -->
-Alex: <!-- Add flair as you like -->
-Josh: <!-- and have fun with your credit section lol. -->
+Kevin:
+
+Sal Monzoor: salzm - Github Username
+
+Marni Luka: <!-- and anything else you wanna put here. -->
+
+Alex Seidensticker: <!-- Add flair as you like -->
+
+Josh Claxton: <a href="https://github.com/claxCode">GitHub</a> || <a href="https://www.linkedin.com/in/joshua-claxton-916a2a272/">LinkedIn</a>
