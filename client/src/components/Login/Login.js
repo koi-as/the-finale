@@ -21,20 +21,20 @@ const LoginForm = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
     const { username, password } = formState;
     console.log(formState);
     try {
       const { data } = await userLogin({
-        variables: { username, password }
+        variables: { username, password },
       });
-
+  
       localStorage.setItem('token', data.login.token);
-      window.location.href= '/';
-
+      window.location.href = '/';
     } catch (err) {
       console.log('Error signing in:', err);
       noLogin();
+      alert('Invalid username or password');
     }
   };
 
